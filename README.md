@@ -7,22 +7,24 @@ Think [Kali](https://www.kali.org/) / [Parrot](https://parrotlinux.org/), but be
 
 ## How to use
 
-It is meant to be installed and used from a [NixOS](https://nixos.org/) host, in a [qemu](https://www.qemu.org/) virtual machine.
+It is meant to be installed and run from a [NixOS](https://nixos.org/) host, using a [qemu](https://www.qemu.org/) virtual machine.
 
 ```
 # Pull the configuration
 git clone git@github.com:Pamplemousse/securitix.git
-# Build the VM
-sudo nixos-rebuild -I nixos-config=./securitix.nix build-vm
-# Run the VM using the generated script
-./result/bin/run-securitix-vm
+# Build and run the VM
+nix-shell -p nixos-generators --run "nixos-generate -f vm -c ./securitix.nix --run"
 ```
+
+### Tips
+
+  * Shared folder: Host's `/run/user/$(id -u)/nix-vm.<ID>` is mounted as `/tmp/xchg` in VM.
 
 ## Limitations
 
   * **VM configuration**:
-    Is defined by the `nixos-rebuild build-vm` command, with no control over the image parameters, or the starting script.
-    It would be great to be able to allocate more resources to the VM, or define alternative networking options.
+    Is defined by the `nixos-generate -f vm` command given above, with no control over the image parameters, or the starting script.
+    It would be great to be able to allocate more resources to the VM, or define alternative networking options (interfacing, mapping of ports between host and guest, etc.).
   * **Customizability**:
     It requires manual editing of files after the `clone`. It would be nice to offer higher level options.
   * **Lack of packages**:
