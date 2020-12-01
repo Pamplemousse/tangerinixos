@@ -18,7 +18,8 @@ nix-shell -p nixos-generators --run "nixos-generate -f vm -c ./securitix.nix --r
 
 ### Tips
 
-  * Shared folder: Host's `/run/user/$(id -u)/nix-vm.<ID>` is mounted as `/tmp/xchg` in VM.
+  * Shared folder: Host's `/run/user/$(id -u)/nix-vm.<ID>` is mounted as `/tmp/xchg` in VM;
+  * SSH traffic is forwarded from host: `ssh rpaulson@127.0.0.1 -p 8022` to connect to the VM.
 
 ## Limitations
 

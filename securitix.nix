@@ -45,6 +45,8 @@ in {
 
   time = hostConfiguration.time;
 
+  services.sshd.enable = true;
+
   services.xserver = {
     enable = true;
 
