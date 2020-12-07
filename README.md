@@ -25,7 +25,7 @@ nix-shell -p nixos-generators --run "nixos-generate -f vm -c ./securitix.nix --r
 
   * **VM configuration**:
     Is defined by the `nixos-generate -f vm` command given above, with no control over the image parameters, or the starting script.
-    It would be great to be able to allocate more resources to the VM, or define alternative networking options (interfacing, mapping of ports between host and guest, etc.).
+    It would be great to be able define alternative networking options (interfacing, mapping of ports between host and guest, etc.).
   * **Customizability**:
     It requires manual editing of files after the `clone`. It would be nice to offer higher level options.
   * **Lack of packages**:

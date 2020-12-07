@@ -66,4 +66,6 @@ in {
   system.stateVersion = config.system.nixos.release;
 
   users.extraUsers = builtins.listToAttrs [ user ];
+
+  virtualisation.memorySize = 800;
 }
