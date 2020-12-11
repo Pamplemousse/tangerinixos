@@ -1,4 +1,6 @@
-# TangerinixOS
+<img src='./tangerinixos.png' width='200' />
+
+# TangeriNixOS
 
 [NixOS](https://nixos.org/) tailored for pentesting.
 
@@ -35,3 +37,10 @@ nix-shell -p nixos-generators --run "nixos-generate -f vm --memory 800 -c ./tang
   * **Too many packages (for maintenance)**:
     Not all the packages from Kali available in [`Nixpkgs`](https://github.com/NixOS/Nixpkgs) evaluates properly...
     Increasing the number of packages for `tangerinixos` implies increasing the risk of evaluation (hence building) failures.
+
+
+## Credits
+
+  * The [logo](./tangerinixos.png) uses:
+    - A picture shared by Doudoulolita, CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia Commons;
+    - Artwork from the NixOS organisation, CC BY 4.0, <https://creativecommons.org/licenses/by/4.0/>.
