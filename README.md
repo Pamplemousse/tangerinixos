@@ -1,4 +1,4 @@
-# securitix
+# TangerinixOS
 
 [NixOS](https://nixos.org/) tailored for pentesting.
 
@@ -11,9 +11,9 @@ It is meant to be installed and run from a [NixOS](https://nixos.org/) host, usi
 
 ```
 # Pull the configuration
-git clone git@github.com:Pamplemousse/securitix.git
+git clone git@github.com:Pamplemousse/tangerinixos.git
 # Build and run the VM
-nix-shell -p nixos-generators --run "nixos-generate -f vm -c ./securitix.nix --run"
+nix-shell -p nixos-generators --run "nixos-generate -f vm --memory 800 -c ./tangerinixos.nix --run"
 ```
 
 ### Tips
@@ -34,4 +34,4 @@ nix-shell -p nixos-generators --run "nixos-generate -f vm -c ./securitix.nix --r
     Be part of the effort by contributing to [NixOS for Pentesting Overview](https://github.com/NixOS/nixpkgs/issues/81418).
   * **Too many packages (for maintenance)**:
     Not all the packages from Kali available in [`Nixpkgs`](https://github.com/NixOS/Nixpkgs) evaluates properly...
-    Increasing the number of packages for `securitix` implies increasing the risk of evaluation (hence building) failures.
+    Increasing the number of packages for `tangerinixos` implies increasing the risk of evaluation (hence building) failures.

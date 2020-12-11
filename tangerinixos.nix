@@ -37,7 +37,7 @@ in {
       hostsFile = builtins.fetchurl hostsPath;
     in builtins.readFile "${hostsFile}";
 
-    hostName = "securitix";
+    hostName = "tangerinixos";
 
     # Default to OpenDNS.
     nameservers = [ "208.67.222.222" "208.67.220.220" ];
