@@ -68,6 +68,7 @@ in with pkgs; [
   iw
   jadx
   john
+  junkie
   kismet
   libfreefare
   libnfc
