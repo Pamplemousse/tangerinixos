@@ -15,7 +15,7 @@ It is meant to be installed and run from a [NixOS](https://nixos.org/) host, usi
 # Pull the configuration
 git clone git@github.com:Pamplemousse/tangerinixos.git
 # Build and run the VM
-nix-shell -p nixos-generators --run "nixos-generate -f vm --memory 800 -c ./tangerinixos.nix --run"
+nix-shell -p nixos-generators --run "nixos-generate -f vm -c ./tangerinixos.nix --run"
 ```
 
 ### Tips
