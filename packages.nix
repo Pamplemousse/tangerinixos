@@ -150,6 +150,7 @@ in with pkgs; [
   wpscan
   yara
   zap
+  zmap
 
   pythonWithPackages
 ]
