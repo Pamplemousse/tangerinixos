@@ -133,6 +133,7 @@ in with pkgs; [
   tcpflow
   tcpreplay
   testdisk
+  testssl
   thc-hydra
   theharvester
   tightvnc
