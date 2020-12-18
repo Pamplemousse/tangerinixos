@@ -90,6 +90,7 @@ in with pkgs; [
   netmask
   netsniff-ng
   nfs-utils
+  ngrep
   nmap
   neovim
   net-snmp
