@@ -140,6 +140,7 @@ in with pkgs; [
   unrar
   utillinux
   volatility
+  wavemon
   whois
   wfuzz
   wget
