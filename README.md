@@ -14,12 +14,17 @@ It is meant to be installed and run from a [NixOS](https://nixos.org/) host, usi
 ```
 # Pull the configuration
 git clone git@github.com:Pamplemousse/tangerinixos.git
+
+# Optional, to speed-up evaluation.
+cachix use tangerinixos
+
 # Build and run the VM
 nix-shell -p nixos-generators --run "nixos-generate -f vm -c ./tangerinixos.nix --run"
 ```
 
 ### Tips
 
+  * Use https://tangerinixos.cachix.org (updated using [GitHub Actions](https://github.com/Pamplemousse/tangerinixos/blob/main/.github/workflows/test.yml)) to speed-up the build by pulling cached binaries;
   * Shared folder: Host's `/run/user/$(id -u)/nix-vm.<ID>` is mounted as `/tmp/xchg` in VM;
   * SSH traffic is forwarded from host: `ssh rpaulson@127.0.0.1 -p 8022` to connect to the VM.
 
@@ -35,7 +40,7 @@ nix-shell -p nixos-generators --run "nixos-generate -f vm -c ./tangerinixos.nix 
     Not all are yet available, but it's getting there!
     Be part of the effort by contributing to [NixOS for Pentesting Overview](https://github.com/NixOS/nixpkgs/issues/81418).
   * **Too many packages (for maintenance)**:
-    Not all the packages from Kali available in [`Nixpkgs`](https://github.com/NixOS/Nixpkgs) evaluates properly...
+    Not all the packages from Kali available in [`Nixpkgs`](https://github.com/NixOS/Nixpkgs) evaluate properly...
     Increasing the number of packages for `tangerinixos` implies increasing the risk of evaluation (hence building) failures.
 
 
