@@ -116,6 +116,7 @@ in with pkgs; [
   reaverwps
   recoverjpeg
   redsocks
+  rustscan
   samba
   safecopy
   siege
