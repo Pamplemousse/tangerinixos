@@ -17,6 +17,7 @@ let
 in with pkgs; [
   aflplusplus
   aircrack-ng
+  amass
   apktool
   arping
   atftp
