@@ -153,6 +153,7 @@ in with pkgs; [
   wpscan
   yara
   zap
+  zeek
   zmap
 
   pythonWithPackages
