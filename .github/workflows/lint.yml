@@ -16,3 +16,15 @@ jobs:
         VALIDATE_ALL_CODEBASE: false
         VALIDATE_JSON: true
         VALIDATE_MARKDOWN: true
+
+  nixpgks-fmt:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2.3.4
+      with:
+        fetch-depth: 0
+    - uses: cachix/install-nix-action@v12
+      with:
+        nix_path: nixpkgs=channel:nixos-unstable
+    - run: nix-shell -p nixpkgs-fmt --run "nixpkgs-fmt --check *.nix"
+      shell: bash
