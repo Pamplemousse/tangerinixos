@@ -1,5 +1,4 @@
 { config, pkgs, ... }:
-
 let
   # Get the host configuration from which some values can be used as defaults:
   # locale, keyboard layout, timezone...
@@ -15,7 +14,8 @@ let
       uid = 1000;
     };
   };
-in {
+in
+{
   console = {
     font = "Fura Code Regular Nerd Font Complete Mono";
     keyMap = hostConfiguration.console.keyMap;
@@ -32,10 +32,12 @@ in {
   i18n = hostConfiguration.i18n;
 
   networking = {
-    extraHosts = let
-      hostsPath = https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts;
-      hostsFile = builtins.fetchurl hostsPath;
-    in builtins.readFile "${hostsFile}";
+    extraHosts =
+      let
+        hostsPath = https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts;
+        hostsFile = builtins.fetchurl hostsPath;
+      in
+      builtins.readFile "${hostsFile}";
 
     hostName = "tangerinixos";
 

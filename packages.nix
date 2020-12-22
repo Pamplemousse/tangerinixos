@@ -1,11 +1,10 @@
 { config, pkgs }:
-
 let
   openssl_102uIsAllowed =
     config.nixpkgs.config ? "permittedInsecurePackages" &&
     (builtins.any (x: x == "openssl-1.0.2u") config.nixpkgs.config.permittedInsecurePackages);
 
-  pythonWithPackages = pkgs.python3.withPackages(ps: with ps; [
+  pythonWithPackages = pkgs.python3.withPackages (ps: with ps; [
     binwalk
     capstone
     distorm3
@@ -14,7 +13,8 @@ let
     sqlmap
   ]);
 
-in with pkgs; [
+in
+with pkgs; [
   aflplusplus
   aircrack-ng
   amass
