@@ -126,6 +126,7 @@ in with pkgs; [
   sleuthkit
   spike
   sqlitebrowser
+  sqlmap
   ssdeep
   ssldump
   sslh
