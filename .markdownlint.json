@@ -1,0 +1,15 @@
+{
+  "default": true,
+  "line-length": false,
+  "no-inline-html": {
+    "allowed_elements": [
+      "img"
+    ]
+  },
+  "no-multiple-blanks": {
+    "maximum": 2
+  },
+  "ul-style": {
+    "style": "sublist"
+  }
+}

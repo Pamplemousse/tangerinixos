@@ -1,0 +1,18 @@
+name: "Lint"
+on: [pull_request, push]
+jobs:
+  super-linter:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2.3.4
+      with:
+        fetch-depth: 0
+    # Only validate new or updated `.json` and `.md` files.
+    # Tell `super-linter` that the configuration files are at the root of the repo.
+    - uses: github/super-linter@v3
+      env:
+        DEFAULT_BRANCH: main
+        LINTER_RULES_PATH: /
+        VALIDATE_ALL_CODEBASE: false
+        VALIDATE_JSON: true
+        VALIDATE_MARKDOWN: true
