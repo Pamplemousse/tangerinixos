@@ -1,5 +1,11 @@
 name: "Lint"
-on: [pull_request, push]
+on:
+  pull_request:
+    branches:
+    - main
+  push:
+    branches:
+    - main
 jobs:
   super-linter:
     runs-on: ubuntu-latest
@@ -21,8 +27,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2.3.4
-      with:
-        fetch-depth: 0
     - uses: cachix/install-nix-action@v12
       with:
         nix_path: nixpkgs=channel:nixos-unstable
